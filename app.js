@@ -1,7 +1,7 @@
-const a = 12
+const names = require('./names');
+const sayHi = require('./utils');
 
-if(a < 10){
-    console.log('Small Number')
-}else{
-    console.log('Large Number')
-}
+
+sayHi('susan')
+sayHi(names.john)
+sayHi(names.peter)
