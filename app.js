@@ -1,7 +1,12 @@
-const names = require('./names');
-const sayHi = require('./utils');
+const {readFileSync, writeFileSync} = require('fs')
 
+const first = readFileSync('./content/first.txt','utf-8')
+const second = readFileSync('./content/first.txt','utf-8')
 
-sayHi('susan')
-sayHi(names.john)
-sayHi(names.peter)
+console.log(first, second);
+
+writeFileSync(
+    './content/result-sync.txt',
+    `Here is the result: ${first}, ${second}`,
+    { flag: 'a'},
+)
